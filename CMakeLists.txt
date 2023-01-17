@@ -38,6 +38,7 @@ add_executable(${PROJECT_NAME}
 set_target_properties(${PROJECT_NAME} PROPERTIES
   USE_FOLDERS               ON
   RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/_out
+  WIN32_EXECUTABLE          $<AND:$<BOOL:${WIN32}>,$<NOT:$<CONFIG:Debug>>>
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src)
