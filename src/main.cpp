@@ -7,7 +7,7 @@
 
 // kalau non-debug dan di windows, jangan spawn console
 #if defined(NDEBUG) && (defined(_WIN32) || defined(_WIN64))
-int WinMain(
+int APIENTRY WinMain(
     [[maybe_unused]] HINSTANCE hInstance,
     [[maybe_unused]] HINSTANCE hPrevInstance,
     [[maybe_unused]] LPSTR lpCmdLine,
