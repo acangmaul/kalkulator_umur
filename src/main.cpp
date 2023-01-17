@@ -17,6 +17,6 @@ int APIENTRY WinMain(
 int main()
 #endif
 {
-    const App app { "imgl", 400, 120 };
+    const App app { "Kalkulator Umur", 400, 120 };
     return app.run();
 }
