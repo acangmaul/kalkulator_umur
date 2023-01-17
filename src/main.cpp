@@ -1,7 +1,9 @@
 #include "app/app.hpp"
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#if defined(_WIN32) || defined(_WIN64)
+#  define WIN32_LEAN_AND_MEAN
+#  include <windows.h>
+#endif
 
 // kalau non-debug dan di windows, jangan spawn console
 #if defined(NDEBUG) && (defined(_WIN32) || defined(_WIN64))

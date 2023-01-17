@@ -2,8 +2,10 @@
 #include "ui/ui.hpp"
 #include <string>
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#if defined(_WIN32) || defined(_WIN64)
+#  define WIN32_LEAN_AND_MEAN
+#  include <windows.h>
+#endif
 
 #include <imgui/imgui.h>
 #include <imgui/imgui_stdlib.h>
@@ -55,11 +57,12 @@ int App::run() const
             const auto credit_text_size = ImGui::CalcTextSize(credit);
 
             if (ImGui::Button("Hitung", ImVec2(-1.f, -1.f - credit_text_size.y))) {
+                // TODO: buat cross platform
                 MessageBoxA(
                     nullptr,
                     ("Umur anda adalah " + umur + " tahun").c_str(),
                     "Info",
-                    MB_ICONINFORMATION
+                    MB_OK | MB_ICONINFORMATION
                 );
             }
 
